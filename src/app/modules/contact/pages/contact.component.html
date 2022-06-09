@@ -1,0 +1,32 @@
+<div class="contact-header">
+    <div class="header-overlay"></div>
+    <div class="contact-header-content">
+        <h1>{{'Contact us'|translate}}</h1>
+    </div>
+</div>
+
+<div class="container-fluid" style="padding : 50px 0">
+    <div class="container">
+        <div class="row" id="kontaktinfo">
+            <div class="col-md-4 shadow">
+                <i class="fas fa-envelope-open-text"></i>
+                <p>{{'Mail us'|translate}}</p>
+                <a href="mailto:info@physioglattbrugg.ch">info@physioglattbrugg.ch</a>
+            </div>
+            <div class="col-md-3 shadow">
+                <i class="fas fa-phone"></i>
+                <p>{{'Call us'|translate}}</p>
+                <a href="tel:+41445543777">+41 44 554 37 77</a>
+                <a href="tel:+41763722286" style="margin-top: 10px">+41 76 372 22 85</a>
+            </div>
+            <div class="col-md-4 shadow">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>{{'Visit us'|translate}}</p>
+                <p style="margin: 0">Europastrasse 5 , 8152 Glattbrugg</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-agmap-component></app-agmap-component>
+<app-contactform-component></app-contactform-component>

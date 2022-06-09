@@ -1,0 +1,40 @@
+.practice-container {
+  display: flex;
+  justify-content: center;
+
+  .practice-content {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+
+    .practice-gallery {
+      width: 50%;
+      display: flex;
+      align-items: center;
+    }
+
+    .practice-text {
+      width: 50%;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .practice-content {
+    flex-direction: column;
+
+    .practice-gallery {
+      width: 100% !important;
+    }
+
+    .practice-text {
+      width: 100% !important;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

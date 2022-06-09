@@ -1,0 +1,47 @@
+<div class="reservation-container">
+    <div class="reservation-content">
+        <div class="reservation-form">
+            <form [formGroup]="reservation">
+                <mat-form-field>
+                    <input matInput type="text" formControlName="firstName" placeholder="{{'name'|translate}}">
+                    <mat-error>{{'errorName'|translate}}</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput type="text" formControlName="phone" placeholder="{{'phone'|translate}}">
+                    <mat-error>{{'errorPhone'|translate}}</mat-error>
+                </mat-form-field>
+                <div class="select-two">
+                    <input
+                            class="timedate"
+                            [owlDateTimeTrigger]="dt9"
+                            [owlDateTime]="dt9"
+                            [owlDateTimeFilter]="myFilter"
+
+                            formControlName="dateTime"
+                            placeholder="{{'datetime'|translate}}"
+                    >
+                    <owl-date-time #dt9></owl-date-time>
+                    <mat-form-field>
+                        <input matInput type="email" formControlName="email" placeholder="{{'email'|translate}}">
+                        <mat-error>{{'errorEmail'|translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <mat-form-field>
+          <textarea
+                  matInput
+                  maxlength="500"
+                  placeholder="{{'note'|translate}}"
+                  [rows]="2"
+                  mat-autosize="false"
+                  ></textarea>
+                    <mat-error>Please write your note</mat-error>
+                </mat-form-field>
+
+                <button mat-raised-button color="primary" [disabled]="!reservation.valid" (click)="onSubmit()">{{'Reserve'|translate}}
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+

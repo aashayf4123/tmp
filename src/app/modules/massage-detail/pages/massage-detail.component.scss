@@ -1,0 +1,61 @@
+.therapy-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.therapy-container h2 {
+  color: #a6c4dc;
+  margin: 24px;
+}
+.therapy-container .therapy-content {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+}
+.therapy-container .therapy-content .description-img {
+  display: flex;
+  width: 50%;
+}
+.therapy-container .therapy-content .description-img img {
+  object-fit: cover;
+  width: 100%;
+}
+.therapy-container .therapy-content .description-text {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 30px;
+}
+
+@media screen and (max-width: 992px) {
+  .therapy-content {
+    flex-direction: column;
+  }
+  .therapy-content .description-img {
+    width: 100% !important;
+  }
+  .therapy-content .description-text {
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .description-text {
+    padding: 15px !important;
+  }
+
+  .description-img.first {
+    max-height: 480px !important;
+  }
+  .description-img img {
+    object-fit: contain !important;
+  }
+
+  .therapy-content {
+    flex-direction: column !important;
+  }
+}
+::ng-deep .bind-description .m-left {
+  margin-left: 50px !important;
+}

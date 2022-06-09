@@ -1,0 +1,45 @@
+.phylosophy-container {
+  display: flex;
+  justify-content: center;
+
+  .phylosophy-content {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+
+    .phylosophy-gallery {
+      width: 50%;
+      display: flex;
+      align-items: center;
+    }
+
+    .phylosophy-text {
+      width: 50%;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+
+      h2 {
+        text-align: center;
+        color: #a6c4dc;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .phylosophy-content {
+    flex-direction: column;
+
+    .phylosophy-gallery {
+      width: 100% !important;
+    }
+
+    .phylosophy-text {
+      width: 100% !important;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+<h1 class="login-heading">Physio Glattbrugg login</h1>
+
+<div class="login-container">
+    <div class="login-content">
+
+        <form [formGroup]="login">
+            <mat-form-field>
+                <input
+                        matInput
+                        type="text"
+                        placeholder="username"
+                        formControlName="username"
+                        autocomplete="off"
+                >
+                <mat-error>Please enter your username</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input
+                        matInput
+                        type="password"
+                        placeholder="Password"
+                        formControlName="password"
+                        autocomplete="off"
+                >
+                <mat-error>Please enter your password</mat-error>
+            </mat-form-field>
+            <button
+                    mat-raised-button color="primary"
+                    [disabled]="!login.valid"
+                    (click)="checkLogin()">Log in
+            </button>
+        </form>
+
+    </div>
+</div>

@@ -1,0 +1,128 @@
+<div class="navbar-conatiner">
+  <div class="navbar-content">
+    <div class="navbar-logo" routerLink="/">
+      <img
+        src="../../../../assets/img/logo/logo_high_resolution_white.png"
+        alt=""
+        class="img-fluid"
+      />
+    </div>
+    <div class="navbar-menu">
+      <li
+        class="nav-menu-item"
+        style="text-transform: uppercase"
+        routerLink="/"
+      >
+        {{ "navigation.home" | translate }}
+      </li>
+
+      <li
+        style="text-transform: uppercase"
+        class="nav-menu-item dropable"
+        (click)="toggle()"
+      >
+        {{ "navigation.services" | translate
+        }}<i class="fas fa-chevron-down"></i>
+        <div class="drop-first" *ngIf="toggler">
+          <li class="drop-first-item hover" id="level1">
+            <p style="text-transform: capitalize">
+              {{ "navigation.therapy" | translate }}
+            </p>
+            <i class="fas fa-chevron-right"></i>
+            <div class="drop-second">
+              <li *ngFor="let m of massages" routerLink="/therapy/{{ m.path }}">
+                {{ m.name | translate }}
+              </li>
+            </div>
+          </li>
+
+          <li class="drop-first-item hover" id="level2">
+            <p style="text-transform: capitalize">
+              {{ "navigation.prevention" | translate }}
+            </p>
+            <i class="fas fa-chevron-right"></i>
+            <div class="drop-second">
+              <li
+                *ngFor="let p of prevention"
+                routerLink="/prevention/{{ p.path }}"
+              >
+                {{ p.name | translate }}
+              </li>
+            </div>
+          </li>
+        </div>
+      </li>
+
+      <li
+        style="text-transform: uppercase"
+        class="nav-menu-item dropable"
+        (click)="toggle1()"
+      >
+        {{ "navigation.about us" | translate
+        }}<i class="fas fa-chevron-down"></i>
+        <div class="drop-first" *ngIf="toggler1">
+          <li
+            class="drop-first-item hover"
+            *ngFor="let a of about"
+            routerLink="/about/{{ a.path }}"
+            style="text-transform: capitalize"
+          >
+            {{ a.name | translate }}
+          </li>
+        </div>
+      </li>
+      <li
+        class="nav-menu-item"
+        style="text-transform: uppercase"
+        routerLink="/contact"
+      >
+        {{ "navigation.contact" | translate }}
+      </li>
+      <li class="nav-menu-item" style="text-transform: uppercase">
+        <a
+          class="nav-menu-item"
+          style="text-decoration: none; color: inherit"
+          href="https://onlinecalendar.medidoc.ch/BookAppointment?cgid=YGPbSfCp90y9lmSq_80Oyg"
+          target="_blank"
+          >{{ "navigation.reservations" | translate }}</a
+        >
+      </li>
+
+      <li
+        class="nav-menu-item"
+        (click)="toggleLang()"
+        style="width: 100px; text-transform: uppercase"
+      >
+        <img [src]="current.img" alt="" height="20px" />
+        {{ current.name }}
+
+        <div
+          class="lang-drop"
+          *ngIf="langOpen"
+          style="
+            position: absolute;
+            background: #a6c4dc;
+            z-index: 2;
+            width: 100px;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+          "
+        >
+          <li
+            *ngFor="let lang of lng"
+            [value]="lang.value"
+            (click)="setLanguage(lang)"
+            style="display: flex; align-items: center; padding: 0 5px"
+          >
+            <img
+              [src]="lang.img"
+              height="20px"
+              alt=""
+              style="padding-right: 5px"
+            />
+            {{ lang.name }}
+          </li>
+        </div>
+      </li>
+    </div>
+  </div>
+</div>

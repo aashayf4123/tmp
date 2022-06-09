@@ -1,0 +1,19 @@
+::ng-deep {
+  carousel#carousel2 {
+    slide {
+      height: auto !important;
+
+      .item {
+        height: auto !important;
+      }
+
+      img {
+        outline: none !important;
+        height: auto !important;
+        object-fit: cover;
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}

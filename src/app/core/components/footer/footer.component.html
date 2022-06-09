@@ -1,0 +1,72 @@
+<footer style="overflow: hidden">
+  <div class="footer-container-top">
+    <div class="footer-top-content">
+      <div class="footer-links">
+        <ul>
+          <li>{{ "QuickMenu" | translate }}</li>
+          <li routerLink="/about/phylosophy">
+            {{ "navigation.phylosophy" | translate }}
+          </li>
+          <li routerLink="/about/practice">
+            {{ "navigation.practice" | translate }}
+          </li>
+          <!-- <li routerLink="/about/about-me">
+            {{ "navigation.about me" | translate }}
+          </li> -->
+          <li routerLink="/contact">{{ "navigation.contact" | translate }}</li>
+          <li>
+            <a
+              style="color: white; text-decoration: none"
+              href="https://onlinecalendar.medidoc.ch/BookAppointment?cgid=YGPbSfCp90y9lmSq_80Oyg"
+              >{{ "navigation.reservations" | translate }}</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="footer-hours">
+        <ul>
+          <li>{{ "WorkingHours" | translate }}</li>
+          <li class="working-hours">
+            {{ "Monday" | translate }}-{{ "Friday" | translate }}
+            <span>07:00 - 20:00</span>
+          </li>
+          <li class="working-hours">
+            {{ "Saturday" | translate }} <span>07:00 - 12:00</span>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-info">
+        <p>{{ "Contact us" | translate }}</p>
+        <div class="footer-info-item">
+          <i class="fas fa-phone"></i>
+          <a href="tel:+41445543777">+41 44 554 37 77</a>
+        </div>
+        <div class="footer-info-item">
+          <i class="fas fa-phone"></i>
+          <a href="tel:+41763722285">+41 76 372 22 85</a>
+        </div>
+        <div class="footer-info-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:info@physioglattbrugg.ch">info@physioglattbrugg.ch</a>
+        </div>
+        <div class="footer-info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>Europastrasse 5 , 8152 Glattbrugg</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-container-bottom">
+    <div class="footer-bottom-content">
+      <div class="footer-logo">
+        <img
+          src="../../../../assets/img/logo/logo_high_resolution_white.png"
+          alt=""
+        />
+      </div>
+      <p class="copyrights">
+        Copyright 2020, Physiotherapie Glattbrugg. All Rights Reserved
+      </p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,24 @@
+.welcome-message {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+
+  .welcome-content {
+    max-width: 800px;
+    width: 100%;
+    font-size: 34px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #a6c4dc;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .welcome-content {
+    padding: 0 10px;
+    font-size: 24px!important;
+  }
+}

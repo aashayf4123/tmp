@@ -1,0 +1,25 @@
+<h2 class="admin-heading">Reservated treatments</h2>
+<div class="admin-table-container">
+    <div class="admin-table-content">
+
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Massage</th>
+                <th>Time</th>
+                <th>Note</th>
+            </tr>
+            <tr *ngFor="let r of reservations">
+                <td>{{r.firstName}}</td>
+                <td>{{r.email}}</td>
+                <td>{{r.phone}}</td>
+                <td>{{r.treatment}}</td>
+                <td>{{r.dateTime}}</td>
+                <td>{{r.note}}</td>
+            </tr>
+        </table>
+
+    </div>
+</div>

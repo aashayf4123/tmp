@@ -1,0 +1,107 @@
+<div *ngIf="innerWidth> 1024">
+    <app-navbar-component></app-navbar-component>
+    <router-outlet></router-outlet>
+    <app-footer-component></app-footer-component>
+</div>
+
+<mat-sidenav-container
+        *ngIf="innerWidth<1025"
+        class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+                 [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+                 [mode]="'over'"
+                 [opened]="false">
+        <mat-toolbar>
+            <img src="../../../../assets/img/logo/logo_high_resolution.png" alt="">
+        </mat-toolbar>
+        <mat-nav-list>
+            <a mat-list-item
+               routerLink="/"
+               [routerLinkActive]="['active']"
+               [routerLinkActiveOptions]="{exact:true}"
+               (click)="drawer.toggle()"
+            >{{'navigation.home'|translate}}
+            </a>
+
+            <a  class="dropdown-chevron"
+                    mat-list-item
+                    [routerLinkActive]="['active']"
+                    [routerLinkActiveOptions]="{exact:true}"
+                    (click)="togle()"
+            >{{'navigation.services'|translate}}
+                <img src="../../../../assets/img/chevron-down-solid.svg" *ngIf="showMenu" height="12px">
+                <img src="../../../../assets/img/chevron-right-solid.svg" *ngIf="!showMenu" height="12px">
+            </a>
+            <mat-nav-list class="sidenav-submenu menu" *ngIf="showMenu" style="padding-left: 10px;">
+
+                <a mat-list-item class="dropdown-chevron" (click)="togleSubMenu()">{{'navigation.therapy'| translate}}
+                    <img src="../../../../assets/img/chevron-down-solid.svg" *ngIf="showSubMenu" height="12px">
+                    <img src="../../../../assets/img/chevron-right-solid.svg" *ngIf="!showSubMenu" height="12px">
+                </a>
+                <mat-nav-list class="sidenav-submenu submenu" *ngIf="showSubMenu" style="padding-left: 10px;">
+                    <a mat-list-item *ngFor="let m of massages" routerLink="/therapy/{{m.path}}"
+                       (click)="drawer.toggle()">{{m.name|translate}}</a>
+                </mat-nav-list>
+
+                <a mat-list-item class="dropdown-chevron" (click)="togleSubMenu1()">{{'navigation.prevention'| translate}}
+                    <img src="../../../../assets/img/chevron-down-solid.svg" *ngIf="showSubMenu1" height="12px">
+                    <img src="../../../../assets/img/chevron-right-solid.svg" *ngIf="!showSubMenu1" height="12px">
+                </a>
+                <mat-nav-list class="sidenav-submenu submenu" *ngIf="showSubMenu1" style="padding-left: 10px;">
+                    <a mat-list-item *ngFor="let p of prevention" routerLink="/prevention/{{p.path}}"
+                       (click)="drawer.toggle()">{{ p.name | translate}}</a>
+                </mat-nav-list>
+            </mat-nav-list>
+            <a class="dropdown-chevron"
+               mat-list-item
+               [routerLinkActive]="['active']"
+               [routerLinkActiveOptions]="{exact:true}"
+               (click)="toggleAbout()"
+            >{{'navigation.about us'|translate}}
+                <img src="../../../../assets/img/chevron-down-solid.svg" *ngIf="toggleAb" height="12px">
+                <img src="../../../../assets/img/chevron-right-solid.svg" *ngIf="!toggleAb" height="12px">
+            </a>
+            <mat-nav-list class="sidenav-submenu" *ngIf="toggleAb" style="padding-left: 10px;">
+                <a mat-list-item *ngFor="let a of about" routerLink="/about/{{a.path}}" (click)="drawer.toggle()">{{a.name|translate}}</a>
+            </mat-nav-list>
+            <a mat-list-item
+               routerLink="/contact"
+               [routerLinkActive]="['active']"
+               [routerLinkActiveOptions]="{exact:true}"
+               (click)="drawer.toggle()"
+            >{{'navigation.contact'|translate}}
+            </a>
+            <a mat-list-item
+               routerLink="/reservations"
+               [routerLinkActive]="['active']"
+               [routerLinkActiveOptions]="{exact:true}"
+               (click)="drawer.toggle()"
+            >{{'navigation.reservations'|translate}}
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <button
+                    type="button"
+                    aria-label="Toggle sidenav"
+                    mat-icon-button
+                    (click)="drawer.toggle()"
+                    *ngIf="isHandset$ | async">
+                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+            <img src="../../../../assets/img/logo/logo_high_resolution_white.png" alt="" style="max-height: 40px">
+
+            <li class="lang-icons" (click)="toggleLang()" >
+                <img [src]="current.img" alt="" height="20px">
+                <div *ngIf="langOpen" style="position: absolute;background: #a6c5dc;box-shadow:0 3px 5px rgba(0,0,0,0.6);padding: 5px;right:5px;z-index: 53333">
+                    <li *ngFor="let lang of lng" [value]="lang.value" (click)="setLanguage(lang)" style="display: flex;align-items: center;z-index: 3">
+                        <img [src]="lang.img" height="30px" alt="" >
+                    </li>
+                </div>
+            </li>
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+        <app-footer-component></app-footer-component>
+    </mat-sidenav-content>
+</mat-sidenav-container>

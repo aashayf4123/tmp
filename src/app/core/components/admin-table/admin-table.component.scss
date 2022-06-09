@@ -1,0 +1,40 @@
+.admin-heading {
+  text-align: center;
+  margin: 20px 0;
+  color: #009abb;
+}
+
+.admin-table-container {
+  display: flex;
+  justify-content: center;
+
+  .admin-table-content {
+    width: 100%;
+    justify-content: center;
+
+    table {
+      width: 100%;
+
+      tr {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+        height: 40px;
+
+        th {
+          background: #67BDCA;
+          height: 50px;
+          font-weight: 700;
+          padding: 0 20px;
+        }
+
+        td {
+          padding: 0 20px;
+        }
+
+        &:nth-child(even) {
+          background-color: #dddddd;
+        }
+      }
+    }
+  }
+}

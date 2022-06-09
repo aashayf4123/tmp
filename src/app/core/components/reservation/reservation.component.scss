@@ -1,0 +1,110 @@
+::ng-deep {
+  .owl-dt-calendar-control {
+    background: #67bdca;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    .owl-dt-control-button-arrow {
+      color: white;
+    }
+  }
+
+  .owl-dt-calendar-main {
+    background: #a6c4dc;
+  }
+
+  .owl-dt-timer-input {
+    background: #a6c4dc;
+    border: none;
+  }
+
+  .owl-dt-container-row.ng-tns-c6-0 {
+    background: black !important;
+  }
+
+  .owl-dt-container-inner.ng-trigger.ng-trigger-fadeInPicker {
+    background: #67bdca;
+  }
+
+  .owl-dt-calendar-control .owl-dt-control-button-arrow {
+    svg {
+      fill: white;
+    }
+  }
+
+  .owl-dt-popup-container .owl-dt-calendar {
+    height: auto;
+  }
+}
+
+.reservation-container {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+
+  .reservation-content {
+    display: flex;
+    max-width: 1200px;
+    flex: 1;
+    justify-content: center;
+
+    .reservation-form {
+      width: 100%;
+      max-width: 600px;
+
+      form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        button {
+          margin: 10px 0;
+          align-self: flex-end;
+          outline: none;
+          width: 150px;
+        }
+
+        button:enabled,
+        button[enabled] {
+          background: #a6c4dc;
+        }
+
+        .select-two {
+          display: flex;
+          justify-content: space-between;
+          align-items: baseline;
+
+          .timedate {
+            padding: 7px 0 3px 0;
+            border: none;
+            border-bottom: 1px solid #949494;
+            width: 48%;
+          }
+
+          mat-form-field {
+            width: 48%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .reservation-container {
+    padding: 10px;
+
+    .select-two {
+      flex-direction: column-reverse;
+
+      .timedate {
+        width: 100% !important;
+      }
+
+      mat-form-field {
+        width: 100% !important;
+      }
+    }
+  }
+}

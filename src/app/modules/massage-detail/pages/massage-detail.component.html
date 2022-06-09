@@ -1,0 +1,37 @@
+<div class="therapy-container">
+  <h2 style="text-align: center">{{ item.name | translate }}</h2>
+  <div class="therapy-content">
+    <div class="description-img first">
+      <img [src]="item.pic" alt="" />
+    </div>
+    <div class="description-text">
+      <div
+        class="bind-description"
+        [innerHTML]="item.description | translate"
+      ></div>
+    </div>
+  </div>
+  <div class="therapy-content" style="flex-direction: row-reverse">
+    <div class="description-img">
+      <img height="100%" [src]="item.pic2" alt="" />
+    </div>
+    <div class="description-text">
+      <div
+        class="bind-description"
+        [innerHTML]="item.team2Description | translate"
+      ></div>
+    </div>
+  </div>
+  <div class="therapy-content">
+    <div class="description-img first">
+      <img [src]="item.pic1" alt="" />
+    </div>
+    <div class="description-text">
+      <div
+        class="bind-description"
+        [innerHTML]="item.team1Description | translate"
+      ></div>
+    </div>
+  </div>
+</div>
+<app-reserve-contact></app-reserve-contact>

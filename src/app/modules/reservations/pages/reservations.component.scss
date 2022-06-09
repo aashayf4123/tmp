@@ -1,0 +1,56 @@
+.buchen-header {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  background: url("../../../../assets/img/pics/_XT22779.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+
+  .header-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .buchen-header-content {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    position: relative;
+    min-height: 400px;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      color: white;
+      font-weight: 700;
+      text-align: center;
+    }
+  }
+}
+
+.calendly-reservation-forms{
+  padding: 40px 0;
+}
+
+
+::ng-deep.calendly-inline-widget {
+  .none {
+    display: none !important;
+  }
+  ._1x5lKF12x7 ._2rtAwC_PC0{
+    display: none!important;
+  }
+}
+
+.none {
+  display: none !important;
+}
+
+@media screen and (max-width: 560px) {
+  .calendly-reservation-forms{
+    padding: 10px 0 !important;
+  }
+}
